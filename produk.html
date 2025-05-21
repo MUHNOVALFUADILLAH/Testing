@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlikIn Aja - Toko Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        .hero-pattern {
+            background-color: #f9fafb;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e5e7eb' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+<nav class="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 md:px-6 flex items-center justify-between py-3">
+        <!-- Logo -->
+        <div class="flex items-center space-x-4">
+            <div class="text-3xl font-bold text-white">
+                <span class="bg-white text-blue-600 px-2 py-1 rounded-lg mr-1">Klik</span>
+                <span class="text-yellow-300">In Aja</span>
+            </div>
+        </div>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+                <svg id="hamburger-icon" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg id="close-icon" class="w-7 h-7 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="font-medium hover:text-yellow-300 transition duration-200">Beranda</a>
+            <a href="produk.html" class="font-medium hover:text-yellow-300 transition duration-200">Produk</a>
+            <a href="#categories" class="font-medium hover:text-yellow-300 transition duration-200">Kategori</a>
+            <a href="#promo" class="font-medium hover:text-yellow-300 transition duration-200">Promo</a>
+            <a href="#contact" class="font-medium hover:text-yellow-300 transition duration-200">Kontak</a>
+        </div>
+    </div>
+
+    <!-- Side Drawer (Mobile Menu) -->
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-blue-700 transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden p-6 space-y-4">
+        <a href="#" class="block font-medium hover:text-yellow-300 transition duration-200">Beranda</a>
+        <a href="#products" class="block font-medium hover:text-yellow-300 transition duration-200">Produk</a>
+        <a href="#categories" class="block font-medium hover:text-yellow-300 transition duration-200">Kategori</a>
+        <a href="#promo" class="block font-medium hover:text-yellow-300 transition duration-200">Promo</a>
+        <a href="#contact" class="block font-medium hover:text-yellow-300 transition duration-200">Kontak</a>
+    </div>
+</nav>
+
+<!-- Overlay (optional, if you want a dark background when open) -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 md:hidden"></div>>
+    
+    <!-- Featured Products -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Produk Terbaru</h2>
+                <p class="text-gray-600">Jelajahi produk terbaru</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 aspect-w-1 aspect-h-1">
+                    <div class="relative">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7qul3-lkalx60qcoes33@resize_w900_nl.webp" alt="Smartphone" class="w-full h-full object-cover" />
+                        <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">SALE</div>
+                        <button class="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md hover:bg-gray-100">
+                            <i class="far fa-heart text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-md text-gray-800 mb-1">Smartphone Model X</h3>
+                        <div class="flex items-center mb-1">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-500 text-xs ml-2">(120)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-400 line-through text-xs">Rp 5.500.000</span>
+                                <p class="text-blue-600 font-bold text-sm">Rp 4.899.000</p>
+                            </div>
+                            <button class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-1 rounded-full transition duration-300">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 aspect-w-1 aspect-h-1">
+                    <div class="relative">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7qul3-lkalx60qcoes33@resize_w900_nl.webp" alt="Headphones" class="w-full h-full object-cover" />
+                        <div class="absolute top-2 left-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">NEW</div>
+                        <button class="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md hover:bg-gray-100">
+                            <i class="far fa-heart text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-md text-gray-800 mb-1">Wireless Headphones</h3>
+                        <div class="flex items-center mb-1">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-500 text-xs ml-2">(85)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-blue-600 font-bold text-sm">Rp 1.299.000</p>
+                            </div>
+                            <button class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-1 rounded-full transition duration-300">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 aspect-w-1 aspect-h-1">
+                    <div class="relative">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7qul3-lkalx60qcoes33@resize_w900_nl.webp" alt="Smart Watch" class="w-full h-full object-cover" />
+                        <button class="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md hover:bg-gray-100">
+                            <i class="far fa-heart text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-md text-gray-800 mb-1">Smart Watch Pro</h3>
+                        <div class="flex items-center mb-1">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-500 text-xs ml-2">(42)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-blue-600 font-bold text-sm">Rp 2.199.000</p>
+                            </div>
+                            <button class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-1 rounded-full transition duration-300">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 aspect-w-1 aspect-h-1">
+                    <div class="relative">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7qul3-lkalx60qcoes33@resize_w900_nl.webp" alt="Laptop" class="w-full h-full object-cover" />
+                        <div class="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">BESTSELLER</div>
+                        <button class="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md hover:bg-gray-100">
+                            <i class="far fa-heart text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-md text-gray-800 mb-1">Ultrabook Pro</h3>
+                        <div class="flex items-center mb-1">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-500 text-xs ml-2">(156)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-400 line-through text-xs">Rp 15.999.000</span>
+                                <p class="text-blue-600 font-bold text-sm">Rp 14.499.000</p>
+                            </div>
+                            <button class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-1 rounded-full transition duration-300">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+    
+    
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-gray-200">
+        <div class="container mx-auto px-4 md:px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="text-2xl font-bold text-white">
+                            <span class="bg-white text-blue-600 px-2 py-1 rounded-lg mr-1">Klik</span>
+                            <span class="text-yellow-300">In Aja</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">Platform belanja online terpercaya dengan berbagai produk berkualitas dan harga terbaik.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-700 hover:bg-blue-600 transition duration-300 h-10 w-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-blue-400 transition duration-300 h-10 w-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-pink-600 transition duration-300 h-10 w-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-red-600 transition duration-300 h-10 w-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Tautan Cepat</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Beranda</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition duration-300">Produk</a></li>
+                        <li><a href="#categories" class="text-gray-400 hover:text-white transition duration-300">Kategori</a></li>
+                        <li><a href="#promo" class="text-gray-400 hover:text-white transition duration-300">Promo</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Kontak Kami</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span class="text-gray-400 hover:text-white transition duration-300">Jl. Contoh, Kota Contoh</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span class="text-gray-400 hover:text-white transition duration-300">+62 123-456-7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span class="text-gray-400 hover:text-white transition duration-300">2mz0B@example.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>    
+                    <h3 class="text-lg font-semibold text-white mb-6">Bantuan</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Syarat dan Ketentuan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Bantuan</a></li>
+                    </ul>
+                </div>  
+            </div>
+            <hr class="my-8 border-gray-700">
+            <p class="text-center text-gray-400">Copyright &copy; 2023 KlikInAja. All rights reserved.</p>  
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFA500',
+                        secondary: '#FFC107',
+                        accent: '#FF5722',
+                    },
+                },
+            },
+        plugins: [],
+        };
+    </script>
+    <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const overlay = document.getElementById('overlay');
+
+    toggleBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('translate-x-full');
+        mobileMenu.classList.toggle('translate-x-full');
+        overlay.classList.toggle('hidden');
+        hamburgerIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    });
+
+    overlay.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    });
+    </script>
+</body>
